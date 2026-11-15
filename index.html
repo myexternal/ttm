@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Tiny Tot Montessori · Gonapinuwala</title>
-<meta name="description" content="Montessori preschool on Baddegama Road, Gonapinuwala (Galle). Little hands learning by doing since 2002. Rated 4.8 on Google.">
+<meta name="description" content="Montessori preschool on Baddegama Road, Gonapinuwala (Galle). Little hands learning by doing since 2002. Rated 4.8 on Google. Also in Sinhala.">
 <meta name="theme-color" content="#FFF7EA">
 <meta name="color-scheme" content="light">
 <link rel="icon" href="media/crest-96.png" type="image/png">
@@ -17,48 +17,61 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/site.css">
-<script>document.documentElement.classList.add("js")</script>
+<script>
+(function(){var d=document.documentElement;d.classList.add("js");var l="";try{l=new URLSearchParams(location.search).get("lang")||localStorage.getItem("ttm-lang")||""}catch(e){}
+if(l==="si"){d.classList.add("si-wait");setTimeout(function(){d.classList.remove("si-wait")},3000)}})();
+</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Preschool","name":"Tiny Tot Montessori","address":{"@type":"PostalAddress","streetAddress":"Baddegama Road","addressLocality":"Gonapinuwala","addressRegion":"Galle","postalCode":"80230","addressCountry":"LK"},"geo":{"@type":"GeoCoordinates","latitude":6.154467,"longitude":80.1437},"telephone":"+94711513550","email":"71tinytot@gmail.com","foundingDate":"2002","sameAs":["https://www.facebook.com/tinytotmontessori/"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"20"}}
+{"@context":"https://schema.org","@type":"Preschool","name":"Tiny Tot Montessori","alternateName":"ටයිනි ටොට් මොන්ටිසෝරි","address":{"@type":"PostalAddress","streetAddress":"Baddegama Road","addressLocality":"Gonapinuwala","addressRegion":"Galle","postalCode":"80230","addressCountry":"LK"},"geo":{"@type":"GeoCoordinates","latitude":6.154467,"longitude":80.1437},"telephone":"+94711513550","email":"71tinytot@gmail.com","foundingDate":"2002","sameAs":["https://www.facebook.com/tinytotmontessori/"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"20"}}
 </script>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 
 <!-- NAV: floating pill -->
 <header class="nav" data-nav>
   <div class="nav-pill">
-    <a class="brand" href="#top" aria-label="Tiny Tot Montessori, back to top">
+    <a class="brand" href="#top" aria-label="Tiny Tot Montessori, back to top" data-i18n-attr="aria-label:brandTop">
       <img src="media/crest-96.png" width="42" height="35" alt="">
       <span class="brand-word"><b>Tiny Tot</b><span>Montessori</span></span>
     </a>
     <nav class="nav-links" aria-label="Main">
-      <a href="#about">About</a>
-      <a href="#learning">Learning</a>
-      <a href="#year">Our year</a>
-      <a href="#teachers">Teachers</a>
-      <a href="#visit">Visit</a>
+      <a href="#about" data-i18n="navAbout">About</a>
+      <a href="#learning" data-i18n="navLearning">Learning</a>
+      <a href="#year" data-i18n="navYear">Our year</a>
+      <a href="#teachers" data-i18n="navTeachers">Teachers</a>
+      <a href="#visit" data-i18n="navVisit">Visit</a>
     </nav>
-    <a class="nav-call" href="tel:+94711513550"><span>Call us</span><b>071 151 3550</b></a>
-    <a class="btn btn-magenta nav-cta" href="#seat"><span class="plus" aria-hidden="true"></span>Claim a seat</a>
+    <div class="lang" role="group" aria-label="Language · භාෂාව">
+      <button type="button" data-set-lang="en" aria-pressed="true" lang="en">EN</button>
+      <button type="button" data-set-lang="si" aria-pressed="false" lang="si">සිං</button>
+    </div>
+    <a class="nav-call" href="tel:+94711513550"><span data-i18n="callUs">Call us</span><b>071 151 3550</b></a>
+    <a class="btn btn-magenta nav-cta" href="#seat"><span class="plus" aria-hidden="true"></span><span data-i18n="claimSeat">Claim a seat</span></a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="sheet" data-menu-open>
-      <span class="menu-lines" aria-hidden="true"></span><span class="sr">Menu</span>
+      <span class="menu-lines" aria-hidden="true"></span><span class="sr" data-i18n="menu">Menu</span>
     </button>
   </div>
 </header>
 
 <div class="sheet" id="sheet" hidden data-sheet>
   <div class="sheet-inner">
-    <button class="sheet-close" type="button" data-menu-close aria-label="Close menu">Close</button>
+    <div class="sheet-top">
+      <div class="lang" role="group" aria-label="Language · භාෂාව">
+        <button type="button" data-set-lang="en" aria-pressed="true" lang="en">EN</button>
+        <button type="button" data-set-lang="si" aria-pressed="false" lang="si">සිං</button>
+      </div>
+      <button class="sheet-close" type="button" data-menu-close data-i18n="close">Close</button>
+    </div>
     <nav aria-label="Mobile">
-      <a href="#about"><span>01</span>About</a>
-      <a href="#learning"><span>02</span>Learning</a>
-      <a href="#year"><span>03</span>Our year</a>
-      <a href="#teachers"><span>04</span>Teachers</a>
-      <a href="#visit"><span>05</span>Visit</a>
+      <a href="#about"><span>01</span><i data-i18n="navAbout">About</i></a>
+      <a href="#learning"><span>02</span><i data-i18n="navLearning">Learning</i></a>
+      <a href="#year"><span>03</span><i data-i18n="navYear">Our year</i></a>
+      <a href="#teachers"><span>04</span><i data-i18n="navTeachers">Teachers</i></a>
+      <a href="#visit"><span>05</span><i data-i18n="navVisit">Visit</i></a>
     </nav>
-    <a class="btn btn-magenta btn-lg sheet-cta" href="#seat"><span class="plus" aria-hidden="true"></span>Claim a seat</a>
-    <p class="sheet-foot"><a href="tel:+94711513550">071 151 3550</a> · Baddegama Rd, Gonapinuwala</p>
+    <a class="btn btn-magenta btn-lg sheet-cta" href="#seat"><span class="plus" aria-hidden="true"></span><span data-i18n="claimSeat">Claim a seat</span></a>
+    <p class="sheet-foot"><a href="tel:+94711513550">071 151 3550</a> · <span data-i18n="roadShort">Baddegama Rd, Gonapinuwala</span></p>
   </div>
 </div>
 
@@ -67,18 +80,18 @@
 <!-- 1 · HERO -->
 <section class="hero" id="top">
   <div class="hero-copy wrap">
-    <p class="kicker" data-rise style="--d:0"><span class="dot" aria-hidden="true"></span>Montessori preschool · Gonapinuwala</p>
+    <p class="kicker" data-rise style="--d:0"><span class="dot" aria-hidden="true"></span><span data-i18n="kicker">Montessori preschool · Gonapinuwala</span></p>
     <h1 class="hero-h1">
-      <span class="h1-line" data-rise style="--d:1"><span class="lt">Little hands,</span></span>
-      <span class="h1-line" data-rise style="--d:2"><b>big beginnings<span class="pink">.</span></b></span>
-      <span class="sticker st-yellow" style="--rot:-8deg" data-pop>Since 2002</span>
+      <span class="h1-line" data-rise style="--d:1"><span class="lt" data-i18n="h1a">Little hands,</span></span>
+      <span class="h1-line" data-rise style="--d:2"><b data-i18n="h1b">big beginnings<span class="pink">.</span></b></span>
+      <span class="sticker st-yellow" style="--rot:-8deg" data-pop data-i18n="since2002">Since 2002</span>
       <span class="sticker st-green" style="--rot:7deg" data-pop>4.8 ★ Google</span>
-      <span class="sticker st-pink" style="--rot:-5deg" data-pop>Montessori</span>
+      <span class="sticker st-pink" style="--rot:-5deg" data-pop data-i18n="montessori">Montessori</span>
     </h1>
-    <p class="hero-sub" data-rise style="--d:3">A bright, safe first school where children learn by doing, in Sinhala and English, with teachers who give every child their attention.</p>
+    <p class="hero-sub" data-rise style="--d:3" data-i18n="heroSub">A bright, safe first school where children learn by doing, in Sinhala and English, with teachers who give every child their attention.</p>
     <div class="hero-cta" data-rise style="--d:4">
-      <a class="btn btn-magenta btn-xl" href="#seat"><span class="plus" aria-hidden="true"></span>Claim a seat for your child</a>
-      <button class="btn btn-play" type="button" data-film-open><span class="play-dot" aria-hidden="true"></span>Watch our film</button>
+      <a class="btn btn-magenta btn-xl" href="#seat"><span class="plus" aria-hidden="true"></span><span data-i18n="heroCta">Claim a seat for your child</span></a>
+      <button class="btn btn-play" type="button" data-film-open><span class="play-dot" aria-hidden="true"></span><span data-i18n="watchFilm">Watch our film</span></button>
     </div>
   </div>
 
@@ -94,12 +107,12 @@
       <button class="hero-pause" type="button" aria-label="Pause background video" data-hero-pause><span class="i-pause" aria-hidden="true"></span></button>
       <div class="float-card fc-review" data-pop>
         <span class="stars" aria-hidden="true">★★★★★</span>
-        <p>“Very safe, clean, and child-friendly.”</p>
-        <span class="muted">Shashika W., Google review</span>
+        <p data-i18n="heroQuote">“Very safe, clean, and child-friendly.”</p>
+        <span class="muted" data-i18n="heroQuoteBy">Shashika W., Google review</span>
       </div>
       <div class="float-card fc-live" data-pop>
         <span class="live" aria-hidden="true"></span>
-        <span><b>Open weekdays</b><span class="muted">Mon–Fri · 8 am–1 pm</span></span>
+        <span><b data-i18n="openWeekdays">Open weekdays</b><span class="muted" data-i18n="hoursShort">Mon–Fri · 8 am–1 pm</span></span>
       </div>
     </div>
     <img class="toy toy-blocks" src="media/toy-blocks.webp" width="720" height="769" alt="" data-float="-0.08" aria-hidden="true">
@@ -107,35 +120,35 @@
 </section>
 
 <!-- 2 · STATS -->
-<section class="stats wrap" aria-label="Tiny Tot at a glance">
+<section class="stats wrap" aria-label="Tiny Tot at a glance" data-i18n-attr="aria-label:statsLabel">
   <ul class="stat-row">
-    <li data-reveal style="--d:0"><b class="stat-n">2002</b><span class="stat-t">Caring for Gonapinuwala’s children since</span></li>
-    <li data-reveal style="--d:1"><b class="stat-n">4.8<small>★</small></b><span class="stat-t">Google rating from 20 reviews</span></li>
-    <li data-reveal style="--d:2"><b class="stat-n">8–1</b><span class="stat-t">Monday to Friday, 8 am to 1 pm</span></li>
-    <li data-reveal style="--d:3"><b class="stat-n">2</b><span class="stat-t">Languages from day one: Sinhala and English</span></li>
+    <li data-reveal style="--d:0"><b class="stat-n">2002</b><span class="stat-t" data-i18n="stat1">Caring for Gonapinuwala’s children since</span></li>
+    <li data-reveal style="--d:1"><b class="stat-n">4.8<small>★</small></b><span class="stat-t" data-i18n="stat2">Google rating from 20 reviews</span></li>
+    <li data-reveal style="--d:2"><b class="stat-n">8–1</b><span class="stat-t" data-i18n="stat3">Monday to Friday, 8 am to 1 pm</span></li>
+    <li data-reveal style="--d:3"><b class="stat-n">2</b><span class="stat-t" data-i18n="stat4">Languages from day one: Sinhala and English</span></li>
   </ul>
 </section>
 
 <!-- 3 · ABOUT: statement with inline photos -->
 <section class="about" id="about">
   <div class="wrap">
-    <p class="label" data-reveal><span class="label-ico" aria-hidden="true"></span>About Tiny Tot</p>
-    <p class="statement" data-reveal>
+    <p class="label" data-reveal><span class="label-ico" aria-hidden="true"></span><span data-i18n="aboutLabel">About Tiny Tot</span></p>
+    <p class="statement" data-reveal data-i18n="statement">
       <span class="lt">At Tiny Tot,</span> <span class="pic"><img src="media/v-friends-640.webp" alt="" loading="lazy"></span> <b>children choose their work,</b> <span class="lt">learn with their hands</span> <span class="pic pic-wide"><img src="media/v-pencils-640.webp" alt="" loading="lazy"></span> <span class="lt">and grow at their own pace,</span> <b>with teachers</b> <span class="pic"><img src="media/v-teach-640.webp" alt="" loading="lazy"></span> <b>who know them by name.</b>
     </p>
     <div class="about-split">
       <figure class="blob-photo" data-reveal>
-        <img src="media/v-class-1280.webp" srcset="media/v-class-640.webp 640w, media/v-class-1280.webp 1280w" sizes="(max-width: 860px) 90vw, 44vw" width="1280" height="720" alt="Children working at small red and blue tables in a bright classroom" loading="lazy">
+        <img src="media/v-class-1280.webp" srcset="media/v-class-640.webp 640w, media/v-class-1280.webp 1280w" sizes="(max-width: 860px) 90vw, 44vw" width="1280" height="720" alt="Children working at small red and blue tables in a bright classroom" data-i18n-attr="alt:altClass" loading="lazy">
         <img class="toy toy-crayon" src="media/toy-crayon.webp" width="720" height="527" alt="" aria-hidden="true">
       </figure>
       <div class="about-copy" data-reveal>
-        <h2 class="h2"><span class="lt">A first school that feels like</span> <b>a second home</b></h2>
-        <p>Big shady trees, a yard full of swings and tunnels, and classrooms painted in every colour. Children learn the Montessori way: real materials, small tables, and the freedom to try again until they get it.</p>
+        <h2 class="h2" data-i18n="aboutH2"><span class="lt">A first school that feels like</span> <b>a second home</b></h2>
+        <p data-i18n="aboutP">Big shady trees, a yard full of swings and tunnels, and classrooms painted in every colour. Children learn the Montessori way: real materials, small tables, and the freedom to try again until they get it.</p>
         <ul class="ticks">
-          <li>Well trained teachers</li>
-          <li>Sinhala and English letters</li>
-          <li>Outdoor play every day</li>
-          <li>Concerts, camps and festivals</li>
+          <li data-i18n="tick1">Well trained teachers</li>
+          <li data-i18n="tick2">Sinhala and English letters</li>
+          <li data-i18n="tick3">Outdoor play every day</li>
+          <li data-i18n="tick4">Concerts, camps and festivals</li>
         </ul>
       </div>
     </div>
@@ -147,63 +160,63 @@
   <div class="wrap">
     <header class="sec-head">
       <div>
-        <p class="label"><span class="label-ico" aria-hidden="true"></span>How children learn here</p>
-        <h2 class="h2"><span class="lt">Six ways</span> <b>little minds grow</b></h2>
+        <p class="label"><span class="label-ico" aria-hidden="true"></span><span data-i18n="learnLabel">How children learn here</span></p>
+        <h2 class="h2" data-i18n="learnH2"><span class="lt">Six ways</span> <b>little minds grow</b></h2>
       </div>
-      <div class="car-nav" aria-label="Scroll the cards">
-        <button type="button" class="round-btn" data-car="-1" aria-label="Previous"><span class="chev l" aria-hidden="true"></span></button>
-        <button type="button" class="round-btn" data-car="1" aria-label="Next"><span class="chev" aria-hidden="true"></span></button>
+      <div class="car-nav" role="group" aria-label="Scroll the cards" data-i18n-attr="aria-label:scrollCards">
+        <button type="button" class="round-btn" data-car="-1" aria-label="Previous" data-i18n-attr="aria-label:prev"><span class="chev l" aria-hidden="true"></span></button>
+        <button type="button" class="round-btn" data-car="1" aria-label="Next" data-i18n-attr="aria-label:next"><span class="chev" aria-hidden="true"></span></button>
       </div>
     </header>
   </div>
-  <div class="cards" data-cards tabindex="0" aria-label="Learning areas">
+  <div class="cards" data-cards tabindex="0" aria-label="Learning areas" data-i18n-attr="aria-label:learnAreas">
     <article class="card c-pink">
-      <span class="pill">Practical life</span>
-      <h3><b>Little chefs</b></h3>
-      <p>Pouring, slicing, tidying up. Real jobs that build calm hands and confidence.</p>
-      <figure class="card-photo b1"><img src="media/cooking-700.webp" width="700" height="933" alt="Children in hair nets preparing food at a long table" loading="lazy"></figure>
+      <span class="pill" data-i18n="c1pill">Practical life</span>
+      <h3><b data-i18n="c1h">Little chefs</b></h3>
+      <p data-i18n="c1p">Pouring, slicing, tidying up. Real jobs that build calm hands and confidence.</p>
+      <figure class="card-photo b1"><img src="media/cooking-700.webp" width="700" height="933" alt="Children in hair nets preparing food at a long table" data-i18n-attr="alt:c1alt" loading="lazy"></figure>
     </article>
     <article class="card c-sky">
-      <span class="pill">Language</span>
-      <h3><b>අ, A and stories</b></h3>
-      <p>Letters in Sinhala and English, songs, picture cards and story time.</p>
-      <figure class="card-photo b2"><img src="media/v-teach-640.webp" width="640" height="360" alt="A teacher tells a story holding up a cut-out car" loading="lazy"></figure>
+      <span class="pill" data-i18n="c2pill">Language</span>
+      <h3><b data-i18n="c2h">අ, A and stories</b></h3>
+      <p data-i18n="c2p">Letters in Sinhala and English, songs, picture cards and story time.</p>
+      <figure class="card-photo b2"><img src="media/v-teach-640.webp" width="640" height="360" alt="A teacher tells a story holding up a cut-out car" data-i18n-attr="alt:c2alt" loading="lazy"></figure>
     </article>
     <article class="card c-sun">
-      <span class="pill">Numbers</span>
-      <h3><b>Count, sort, match</b></h3>
-      <p>From the counting caterpillar on the wall to sorting colours on the shelf.</p>
-      <figure class="card-photo b3"><img src="media/v-numbers-640.webp" width="640" height="360" alt="A painted number caterpillar on a pink wall" loading="lazy"></figure>
+      <span class="pill" data-i18n="c3pill">Numbers</span>
+      <h3><b data-i18n="c3h">Count, sort, match</b></h3>
+      <p data-i18n="c3p">From the counting caterpillar on the wall to sorting colours on the shelf.</p>
+      <figure class="card-photo b3"><img src="media/v-numbers-640.webp" width="640" height="360" alt="A painted number caterpillar on a pink wall" data-i18n-attr="alt:c3alt" loading="lazy"></figure>
     </article>
     <article class="card c-green">
-      <span class="pill">Movement</span>
-      <h3><b>Climb, swing, crawl</b></h3>
-      <p>A rope ladder up the big tree, swings in the shade and a tyre tunnel.</p>
-      <figure class="card-photo b1"><img src="media/v-climb-640.webp" width="640" height="360" alt="A boy climbs a rope ladder on a tree" loading="lazy"></figure>
+      <span class="pill" data-i18n="c4pill">Movement</span>
+      <h3><b data-i18n="c4h">Climb, swing, crawl</b></h3>
+      <p data-i18n="c4p">A rope ladder up the big tree, swings in the shade and a tyre tunnel.</p>
+      <figure class="card-photo b1"><img src="media/v-climb-640.webp" width="640" height="360" alt="A boy climbs a rope ladder on a tree" data-i18n-attr="alt:c4alt" loading="lazy"></figure>
     </article>
     <article class="card c-lilac">
-      <span class="pill">Arts & stage</span>
-      <h3><b>Sing, dance, shine</b></h3>
-      <p>Songs every day and a full stage at the annual concert.</p>
-      <figure class="card-photo b2"><img src="media/fairies-900.webp" width="900" height="536" alt="Children in fairy costumes dancing on stage" loading="lazy"></figure>
+      <span class="pill" data-i18n="c5pill">Arts &amp; stage</span>
+      <h3><b data-i18n="c5h">Sing, dance, shine</b></h3>
+      <p data-i18n="c5p">Songs every day and a full stage at the annual concert.</p>
+      <figure class="card-photo b2"><img src="media/fairies-900.webp" width="900" height="536" alt="Children in fairy costumes dancing on stage" data-i18n-attr="alt:c5alt" loading="lazy"></figure>
     </article>
     <article class="card c-pink">
-      <span class="pill">Nature & values</span>
-      <h3><b>Grow kind</b></h3>
-      <p>A sapling in every pair of hands on planting day, and Vesak together.</p>
-      <figure class="card-photo b3"><img src="media/plants-1280.webp" width="1280" height="576" alt="Children holding potted saplings" loading="lazy"></figure>
+      <span class="pill" data-i18n="c6pill">Nature &amp; values</span>
+      <h3><b data-i18n="c6h">Grow kind</b></h3>
+      <p data-i18n="c6p">A sapling in every pair of hands on planting day, and Vesak together.</p>
+      <figure class="card-photo b3"><img src="media/plants-1280.webp" width="1280" height="576" alt="Children holding potted saplings" data-i18n-attr="alt:c6alt" loading="lazy"></figure>
     </article>
   </div>
 </section>
 
 <!-- 5 · FILM -->
-<section class="film-band" aria-label="School film">
+<section class="film-band" aria-label="School film" data-i18n-attr="aria-label:filmLabel">
   <button class="film-poster" type="button" data-film-open>
     <img src="media/v-drone-1280.webp" srcset="media/v-drone-640.webp 640w, media/v-drone-1280.webp 1280w" sizes="100vw" width="1280" height="720" alt="" loading="lazy">
     <span class="film-copy">
       <span class="big-play" aria-hidden="true"></span>
-      <span class="film-title"><span class="lt">See a morning at</span> <b>Tiny Tot</b></span>
-      <span class="film-meta">75 seconds · with sound · film by Sampath Video</span>
+      <span class="film-title" data-i18n="filmTitle"><span class="lt">See a morning at</span> <b>Tiny Tot</b></span>
+      <span class="film-meta" data-i18n="filmMeta">75 seconds · with sound · film by Sampath Video</span>
     </span>
   </button>
 </section>
@@ -213,38 +226,38 @@
   <div class="wrap">
     <header class="sec-head center">
       <div>
-        <p class="label"><span class="label-ico" aria-hidden="true"></span>Happy moments</p>
-        <h2 class="h2"><span class="lt">The days they</span> <b>talk about at home</b></h2>
+        <p class="label"><span class="label-ico" aria-hidden="true"></span><span data-i18n="yearLabel">Happy moments</span></p>
+        <h2 class="h2" data-i18n="yearH2"><span class="lt">The days they</span> <b>talk about at home</b></h2>
       </div>
     </header>
   </div>
   <div class="polaroids" data-polaroids>
-    <figure class="pola" style="--rot:-5deg;--y:10px"><img src="media/vesak-700.webp" width="700" height="933" alt="Children in white listening to a monk on Vesak day" loading="lazy"><figcaption><b>Vesak</b><span>Lanterns and a dhamma talk</span></figcaption></figure>
-    <figure class="pola" style="--rot:4deg;--y:-14px"><img src="media/beach-900.webp" width="900" height="675" alt="Children with balloons line up for a race on the beach" loading="lazy"><figcaption><b>Sports day</b><span>Balloon races on the beach</span></figcaption></figure>
-    <figure class="pola" style="--rot:-3deg;--y:18px"><img src="media/campfire-1024.webp" width="1024" height="768" alt="Children in pyjamas around a campfire at night" loading="lazy"><figcaption><b>Night camp</b><span>A campfire under the trees</span></figcaption></figure>
-    <figure class="pola" style="--rot:6deg;--y:-6px"><img src="media/band-1000.webp" width="1000" height="582" alt="A boy in a red band uniform plays a big drum" loading="lazy"><figcaption><b>Annual concert</b><span>The marching band</span></figcaption></figure>
-    <figure class="pola" style="--rot:-6deg;--y:12px"><img src="media/lamps-900.webp" width="900" height="675" alt="Oil lamps glowing along the stepped front wall at night" loading="lazy"><figcaption><b>Lamp night</b><span>The front wall, all lit up</span></figcaption></figure>
-    <figure class="pola" style="--rot:3deg;--y:-10px"><img src="media/v-tunnel-640.webp" width="640" height="360" alt="A child crawls through a painted tyre tunnel" loading="lazy"><figcaption><b>Every day</b><span>Through the tyre tunnel</span></figcaption></figure>
+    <figure class="pola" style="--rot:-5deg;--y:10px"><img src="media/vesak-700.webp" width="700" height="933" alt="Children in white listening to a monk on Vesak day" data-i18n-attr="alt:p1alt" loading="lazy"><figcaption><b data-i18n="p1h">Vesak</b><span data-i18n="p1t">Lanterns and a dhamma talk</span></figcaption></figure>
+    <figure class="pola" style="--rot:4deg;--y:-14px"><img src="media/beach-900.webp" width="900" height="675" alt="Children with balloons line up for a race on the beach" data-i18n-attr="alt:p2alt" loading="lazy"><figcaption><b data-i18n="p2h">Sports day</b><span data-i18n="p2t">Balloon races on the beach</span></figcaption></figure>
+    <figure class="pola" style="--rot:-3deg;--y:18px"><img src="media/campfire-1024.webp" width="1024" height="768" alt="Children in pyjamas around a campfire at night" data-i18n-attr="alt:p3alt" loading="lazy"><figcaption><b data-i18n="p3h">Night camp</b><span data-i18n="p3t">A campfire under the trees</span></figcaption></figure>
+    <figure class="pola" style="--rot:6deg;--y:-6px"><img src="media/band-1000.webp" width="1000" height="582" alt="A boy in a red band uniform plays a big drum" data-i18n-attr="alt:p4alt" loading="lazy"><figcaption><b data-i18n="p4h">Annual concert</b><span data-i18n="p4t">The marching band</span></figcaption></figure>
+    <figure class="pola" style="--rot:-6deg;--y:12px"><img src="media/lamps-900.webp" width="800" height="938" alt="Oil lamps glowing along the stepped front wall at night" data-i18n-attr="alt:p5alt" loading="lazy"><figcaption><b data-i18n="p5h">Lamp night</b><span data-i18n="p5t">The front wall, all lit up</span></figcaption></figure>
+    <figure class="pola" style="--rot:3deg;--y:-10px"><img src="media/v-tunnel-640.webp" width="640" height="360" alt="A child crawls through a painted tyre tunnel" data-i18n-attr="alt:p6alt" loading="lazy"><figcaption><b data-i18n="p6h">Every day</b><span data-i18n="p6t">Through the tyre tunnel</span></figcaption></figure>
   </div>
-  <p class="credit wrap center">Concert photos: ShutterTime, Yesith Bimsara De Silva</p>
+  <p class="credit wrap center" data-i18n="yearCredit">Concert photos: ShutterTime, Yesith Bimsara De Silva</p>
 </section>
 
 <!-- 7 · STORY + 3D CREST -->
 <section class="story scallop-top dark" id="story">
   <div class="story-grid wrap">
     <div class="story-text">
-      <p class="label on-dark"><span class="label-ico" aria-hidden="true"></span>Our promise</p>
-      <h2 class="h2"><b>Since 2002,</b> <span class="lt">one simple promise.</span></h2>
+      <p class="label on-dark"><span class="label-ico" aria-hidden="true"></span><span data-i18n="storyLabel">Our promise</span></p>
+      <h2 class="h2" data-i18n="storyH2"><b>Since 2002,</b> <span class="lt">one simple promise.</span></h2>
       <blockquote class="promise">
-        <p>“We believe in giving the best to our children to create a bright future for everyone.”</p>
-        <cite>From the school’s own words</cite>
+        <p data-i18n="promise">“We believe in giving the best to our children to create a bright future for everyone.”</p>
+        <cite data-i18n="promiseBy">From the school’s own words</cite>
       </blockquote>
-      <p class="story-p">The laurel stands for growing, the <b>T</b> over the <b>M</b> for Tiny Tot Montessori. Spin the crest to see the back.</p>
+      <p class="story-p" data-i18n="storyP">The laurel stands for growing, and the two <b>T</b>s over the <b>M</b> for Tiny Tot Montessori. Spin the crest to see the back.</p>
     </div>
     <div class="crest-stage" data-crest>
-      <canvas class="crest-canvas" aria-label="3D model of the Tiny Tot Montessori crest. Drag to spin it." role="img"></canvas>
-      <img class="crest-fallback" src="media/crest-512.png" width="512" height="429" alt="Tiny Tot Montessori crest: a green laurel wreath around a blue T and M" loading="lazy">
-      <p class="crest-hint" aria-hidden="true"><span class="drag-dot"></span>Drag to spin</p>
+      <canvas class="crest-canvas" aria-label="3D model of the Tiny Tot Montessori crest. Drag to spin it." data-i18n-attr="aria-label:crestAria" role="img"></canvas>
+      <img class="crest-fallback" src="media/crest-512.png" width="512" height="429" alt="Tiny Tot Montessori crest: a green laurel wreath around the blue T T M monogram" data-i18n-attr="alt:crestAlt" loading="lazy">
+      <p class="crest-hint" aria-hidden="true"><span class="drag-dot"></span><span data-i18n="dragSpin">Drag to spin</span></p>
     </div>
   </div>
 </section>
@@ -254,38 +267,38 @@
   <div class="wrap">
     <header class="sec-head center">
       <div>
-        <p class="label"><span class="label-ico" aria-hidden="true"></span>Our teachers</p>
-        <h2 class="h2"><span class="lt">Caring hearts behind</span> <b>every happy child</b></h2>
+        <p class="label"><span class="label-ico" aria-hidden="true"></span><span data-i18n="teachLabel">Our teachers</span></p>
+        <h2 class="h2" data-i18n="teachH2"><span class="lt">Caring hearts behind</span> <b>every happy child</b></h2>
       </div>
     </header>
     <div class="teach-stage">
       <figure class="teach-photo">
-        <img src="media/teachers-1000.webp" srcset="media/teachers-1000.webp 1000w, media/teachers-2000.webp 2000w" sizes="(max-width: 860px) 100vw, 1200px" width="2000" height="1164" alt="Eleven Tiny Tot teachers in matching white sarees with pink blouses" loading="lazy">
-        <figcaption class="credit-on">Photo: ShutterTime, Yesith Bimsara De Silva</figcaption>
+        <img src="media/teachers-1000.webp" srcset="media/teachers-1000.webp 1000w, media/teachers-2000.webp 2000w" sizes="(max-width: 860px) 100vw, 1200px" width="2000" height="1164" alt="Eleven Tiny Tot teachers in matching white sarees with pink blouses" data-i18n-attr="alt:teachAlt" loading="lazy">
+        <figcaption class="credit-on" data-i18n="teachCredit">Photo: ShutterTime, Yesith Bimsara De Silva</figcaption>
       </figure>
       <div class="stamp" data-reviews-car>
         <span class="quote-mark" aria-hidden="true">“</span>
         <div class="stamp-slides">
           <blockquote class="slide is-on">
-            <p>The teachers are very kind, caring, and well trained, and they give great attention to each child.</p>
-            <cite><span class="stars" aria-hidden="true">★★★★★</span><b>Shashika W.</b> Google review</cite>
+            <p data-i18n="rev1">The teachers are very kind, caring, and well trained, and they give great attention to each child.</p>
+            <cite><span class="stars" aria-hidden="true">★★★★★</span><b>Shashika W.</b> <span data-i18n="googleReview">Google review</span></cite>
           </blockquote>
           <blockquote class="slide">
-            <p>It has very talented teachers. They do an excellent job of building a strong foundation for every child’s future.</p>
-            <cite><span class="stars" aria-hidden="true">★★★★★</span><b>Poorni N.</b> Google review</cite>
+            <p data-i18n="rev2">It has very talented teachers. They do an excellent job of building a strong foundation for every child’s future.</p>
+            <cite><span class="stars" aria-hidden="true">★★★★★</span><b>Poorni N.</b> <span data-i18n="googleReview">Google review</span></cite>
           </blockquote>
         </div>
         <div class="stamp-nav">
-          <button type="button" class="round-btn sm" data-rev="-1" aria-label="Previous review"><span class="chev l" aria-hidden="true"></span></button>
+          <button type="button" class="round-btn sm" data-rev="-1" aria-label="Previous review" data-i18n-attr="aria-label:prevRev"><span class="chev l" aria-hidden="true"></span></button>
           <span class="rev-count" data-rev-count>1 / 2</span>
-          <button type="button" class="round-btn sm" data-rev="1" aria-label="Next review"><span class="chev" aria-hidden="true"></span></button>
+          <button type="button" class="round-btn sm" data-rev="1" aria-label="Next review" data-i18n-attr="aria-label:nextRev"><span class="chev" aria-hidden="true"></span></button>
         </div>
       </div>
     </div>
     <div class="tags-row">
-      <a class="rating-pill" href="#" data-reviews target="_blank" rel="noopener"><b>4.8</b><span class="stars" aria-hidden="true">★★★★★</span><span>20 reviews on Google ↗</span></a>
-      <ul class="tags" aria-label="What parents mention most">
-        <li>Talented teachers</li><li>Individual attention</li><li>Montessori methods</li><li>Child-friendly</li>
+      <a class="rating-pill" href="#" data-reviews target="_blank" rel="noopener"><b>4.8</b><span class="stars" aria-hidden="true">★★★★★</span><span data-i18n="reviewsLink">20 reviews on Google ↗</span></a>
+      <ul class="tags" aria-label="What parents mention most" data-i18n-attr="aria-label:tagsLabel">
+        <li data-i18n="tag1">Talented teachers</li><li data-i18n="tag2">Individual attention</li><li data-i18n="tag3">Montessori methods</li><li data-i18n="tag4">Child-friendly</li>
       </ul>
     </div>
   </div>
@@ -296,37 +309,37 @@
   <div class="seat-glow" aria-hidden="true"></div>
   <div class="wrap">
     <header class="seat-head">
-      <p class="label on-dark"><span class="label-ico" aria-hidden="true"></span>Admissions</p>
-      <h2 class="h2"><span class="lt">Your child’s</span> <b>golden ticket</b></h2>
-      <p class="seat-sub">Fill in three details and claim a seat. We’ll call you back to plan a visit.</p>
+      <p class="label on-dark"><span class="label-ico" aria-hidden="true"></span><span data-i18n="seatLabel">Admissions</span></p>
+      <h2 class="h2" data-i18n="seatH2"><span class="lt">Your child’s</span> <b>golden ticket</b></h2>
+      <p class="seat-sub" data-i18n="seatSub">Fill in three details and claim a seat. We’ll call you back to plan a visit.</p>
     </header>
 
     <form class="ticket" data-enrol novalidate>
       <div class="ticket-main">
         <div class="ticket-top">
-          <span class="admit">Admit one little learner</span>
-          <span class="ticket-no">Est. 2002</span>
+          <span class="admit" data-i18n="admit">Admit one little learner</span>
+          <span class="ticket-no" data-i18n="est">Est. 2002</span>
         </div>
         <div class="t-fields">
           <div class="field">
-            <label for="f-parent">Your name</label>
+            <label for="f-parent" data-i18n="fParent">Your name</label>
             <input id="f-parent" name="parent" type="text" autocomplete="name" required>
           </div>
           <div class="field">
-            <label for="f-phone">Phone</label>
+            <label for="f-phone" data-i18n="fPhone">Phone</label>
             <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="07X XXX XXXX" required>
           </div>
           <div class="field">
-            <label for="f-child">Child’s first name</label>
+            <label for="f-child" data-i18n="fChild">Child’s first name</label>
             <input id="f-child" name="child" type="text" autocomplete="off">
           </div>
           <div class="field">
-            <label for="f-age">Child’s age</label>
-            <input id="f-age" name="age" type="text" inputmode="text" placeholder="e.g. 3 years" autocomplete="off">
+            <label for="f-age" data-i18n="fAge">Child’s age</label>
+            <input id="f-age" name="age" type="text" placeholder="e.g. 3 years" data-i18n-attr="placeholder:fAgePh" autocomplete="off">
           </div>
           <div class="field field-full">
-            <label for="f-msg">Anything else <span class="opt">(optional)</span></label>
-            <input id="f-msg" name="message" type="text" placeholder="A good day to visit, a question about fees…">
+            <label for="f-msg" data-i18n="fMsg">Anything else <span class="opt">(optional)</span></label>
+            <input id="f-msg" name="message" type="text" placeholder="A good day to visit, a question about fees…" data-i18n-attr="placeholder:fMsgPh">
           </div>
         </div>
         <p class="form-status" role="status" aria-live="polite" data-status></p>
@@ -334,15 +347,15 @@
 
       <div class="ticket-stub">
         <img class="stub-star" src="media/toy-star.webp" width="720" height="753" alt="" aria-hidden="true">
-        <p class="stub-small">Tiny Tot Montessori<br>Gonapinuwala</p>
+        <p class="stub-small" data-i18n="stubSmall">Tiny Tot Montessori<br>Gonapinuwala</p>
         <button class="btn btn-gold btn-xl claim" type="submit" data-claim>
-          <span class="claim-txt">Claim this seat</span>
+          <span class="claim-txt" data-i18n="claimThis">Claim this seat</span>
         </button>
-        <a class="stub-alt" href="mailto:71tinytot@gmail.com" data-mail>or send by email</a>
-        <span class="stamp-mark" aria-hidden="true" data-stamp><b>Seat<br>requested</b><span>✓</span></span>
+        <a class="stub-alt" href="mailto:71tinytot@gmail.com" data-mail data-i18n="byEmail">or send by email</a>
+        <span class="stamp-mark" aria-hidden="true" data-stamp><b data-i18n="stamp">Seat<br>requested</b><span>✓</span></span>
       </div>
     </form>
-    <p class="seat-foot">Sending opens WhatsApp with your message ready, so nothing is stored on this website. Prefer to talk? <a href="tel:+94711513550">Call 071 151 3550</a></p>
+    <p class="seat-foot" data-i18n="seatFoot">Sending opens WhatsApp with your message ready, so nothing is stored on this website. Prefer to talk? <a href="tel:+94711513550">Call 071 151 3550</a></p>
   </div>
   <canvas class="confetti" aria-hidden="true" data-confetti></canvas>
 </section>
@@ -352,28 +365,28 @@
   <div class="wrap">
     <header class="sec-head">
       <div>
-        <p class="label"><span class="label-ico" aria-hidden="true"></span>Visit us</p>
-        <h2 class="h2"><span class="lt">Look for the</span> <b class="red">red letters</b> <span class="lt">on Baddegama Road</span></h2>
+        <p class="label"><span class="label-ico" aria-hidden="true"></span><span data-i18n="visitLabel">Visit us</span></p>
+        <h2 class="h2" data-i18n="visitH2"><span class="lt">Look for the</span> <b class="red">red letters</b> <span class="lt">on Baddegama Road</span></h2>
       </div>
     </header>
     <div class="visit-grid">
       <figure class="visit-photo">
-        <img src="media/fence-1000.webp" srcset="media/fence-1000.webp 1000w, media/fence-2048.webp 2048w" sizes="(max-width: 960px) 100vw, 60vw" width="2048" height="1228" alt="The front wall with TINY TOT MONTESSORI painted in red, with the playground behind" loading="lazy">
+        <img src="media/fence-1000.webp" srcset="media/fence-1000.webp 1000w, media/fence-2048.webp 1581w" sizes="(max-width: 960px) 100vw, 60vw" width="1581" height="1228" alt="The front wall with TINY TOT MONTESSORI painted in red, with the playground behind" data-i18n-attr="alt:fenceAlt" loading="lazy">
       </figure>
       <aside class="card-visit">
         <dl class="facts">
-          <div><dt>Address</dt><dd>Baddegama Road, Gonapinuwala 80230, Galle</dd></div>
-          <div><dt>Hours</dt><dd>Mon–Fri · 8 am–1 pm<br><span class="muted">Sat & Sun closed</span></dd></div>
-          <div><dt>Call</dt><dd><a href="tel:+94711513550">071 151 3550</a><br><a href="tel:+94765672424">076 567 2424</a></dd></div>
-          <div><dt>Email</dt><dd><a href="mailto:71tinytot@gmail.com">71tinytot@gmail.com</a></dd></div>
+          <div><dt data-i18n="dtAddress">Address</dt><dd data-i18n="ddAddress">Baddegama Road, Gonapinuwala 80230, Galle</dd></div>
+          <div><dt data-i18n="dtHours">Hours</dt><dd data-i18n="ddHours">Mon–Fri · 8 am–1 pm<br><span class="muted">Sat &amp; Sun closed</span></dd></div>
+          <div><dt data-i18n="dtCall">Call</dt><dd><a href="tel:+94711513550">071 151 3550</a><br><a href="tel:+94765672424">076 567 2424</a></dd></div>
+          <div><dt data-i18n="dtEmail">Email</dt><dd><a href="mailto:71tinytot@gmail.com">71tinytot@gmail.com</a></dd></div>
         </dl>
         <div class="visit-links">
-          <a class="btn btn-ink" href="#" data-directions target="_blank" rel="noopener">Directions ↗</a>
+          <a class="btn btn-ink" href="#" data-directions target="_blank" rel="noopener" data-i18n="directions">Directions ↗</a>
           <a class="btn btn-line" href="#" data-facebook target="_blank" rel="noopener">Facebook ↗</a>
         </div>
       </aside>
       <div class="map" data-map>
-        <button class="map-load" type="button" data-map-load><span><b>Show map</b><span class="lt">Loads Google Maps</span></span></button>
+        <button class="map-load" type="button" data-map-load><span><b data-i18n="showMap">Show map</b><span class="lt" data-i18n="loadsMaps">Loads Google Maps</span></span></button>
       </div>
     </div>
   </div>
@@ -383,39 +396,40 @@
 
 <footer class="foot scallop-top dark">
   <div class="foot-cta wrap">
-    <p class="foot-ask"><span class="lt">Ready for the</span> <b>first day?</b></p>
-    <a class="btn btn-gold btn-xl" href="#seat">Claim a seat</a>
+    <p class="foot-ask" data-i18n="footAsk"><span class="lt">Ready for the</span> <b>first day?</b></p>
+    <a class="btn btn-gold btn-xl" href="#seat" data-i18n="claimSeat">Claim a seat</a>
   </div>
   <div class="foot-mark wrap">
     <p class="foot-word"><b>Tiny Tot</b><span class="lt">Montessori</span></p>
     <p class="foot-si" lang="si">ටයිනි ටොට් මොන්ටිසෝරි</p>
   </div>
   <div class="foot-row wrap">
-    <p>Montessori preschool · Gonapinuwala, Galle · Since 2002</p>
-    <p class="muted">Film by Sampath Video. Concert and teacher photos by ShutterTime.</p>
+    <p data-i18n="footLine">Montessori preschool · Gonapinuwala, Galle · Since 2002</p>
+    <p class="muted" data-i18n="footCredit">Film by Sampath Video. Concert and teacher photos by ShutterTime.</p>
   </div>
 </footer>
 
-<nav class="dock" aria-label="Quick actions" data-dock>
-  <a href="tel:+94711513550"><span class="d-ico d-call" aria-hidden="true"></span>Call</a>
+<nav class="dock" aria-label="Quick actions" data-dock data-i18n-attr="aria-label:quickActions">
+  <a href="tel:+94711513550"><span class="d-ico d-call" aria-hidden="true"></span><span data-i18n="dockCall">Call</span></a>
   <a href="#" data-wa-direct target="_blank" rel="noopener"><span class="d-ico" aria-hidden="true"></span>WhatsApp</a>
-  <a class="dock-main" href="#seat">Claim a seat</a>
+  <a class="dock-main" href="#seat" data-i18n="claimSeat">Claim a seat</a>
 </nav>
 
-<dialog class="film" data-film aria-label="Tiny Tot school film">
+<dialog class="film" data-film aria-label="Tiny Tot school film" data-i18n-attr="aria-label:filmDialog">
   <div class="film-inner">
     <video controls playsinline preload="none" poster="media/v-drone-1280.webp" data-film-video>
       <source src="media/film-75s.mp4" type="video/mp4">
     </video>
     <div class="film-bar">
-      <p>School film by Sampath Video</p>
-      <button type="button" class="btn btn-paper" data-film-close>Close</button>
+      <p data-i18n="filmCredit">School film by Sampath Video</p>
+      <button type="button" class="btn btn-paper" data-film-close data-i18n="close">Close</button>
     </div>
   </div>
 </dialog>
 
 <script type="importmap">{"imports":{"three":"./vendor/three.module.min.js"}}</script>
 <script src="js/config.js"></script>
+<script src="js/i18n-si.js" defer></script>
 <script src="js/app.js" defer></script>
 <script type="module" src="js/crest.js"></script>
 </body>

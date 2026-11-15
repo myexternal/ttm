@@ -64,9 +64,11 @@ function init() {
   const ext = { depth: 0.09, bevelEnabled: true, bevelThickness: 0.025, bevelSize: 0.018, bevelSegments: 3, curveSegments: 6 };
   const s = 0.86;
   const P = (pts) => { const sh = new THREE.Shape(); pts.forEach(([x, y], i) => (i ? sh.lineTo(x * s, y * s) : sh.moveTo(x * s, y * s))); sh.closePath(); return sh; };
-  const bar = P([[-0.8, 0.43], [0.8, 0.43], [0.8, 0.57], [-0.8, 0.57]]);
-  const em = P([[-0.62, -0.62], [-0.62, 0.43], [-0.46, 0.43], [0, -0.16], [0.46, 0.43], [0.62, 0.43], [0.62, -0.62], [0.49, -0.62], [0.49, 0.17], [0.07, -0.37], [-0.07, -0.37], [-0.49, 0.17], [-0.49, -0.62]]);
-  const mono = new THREE.Mesh(new THREE.ExtrudeGeometry([bar, em], ext), C.ink);
+  // two separate T tops, one over each stem of the M, with a gap in the middle (as on the real logo)
+  const barL = P([[-0.8, 0.45], [-0.095, 0.45], [-0.095, 0.57], [-0.8, 0.57]]);
+  const barR = P([[0.095, 0.45], [0.8, 0.45], [0.8, 0.57], [0.095, 0.57]]);
+  const em = P([[-0.535, -0.4], [-0.535, 0.45], [-0.36, 0.45], [0, -0.14], [0.36, 0.45], [0.535, 0.45], [0.535, -0.4], [0.35, -0.4], [0.35, 0.17], [0, -0.4], [-0.35, 0.17], [-0.35, -0.4]]);
+  const mono = new THREE.Mesh(new THREE.ExtrudeGeometry([barL, barR, em], ext), C.ink);
   mono.position.set(0, 0.02, FZ);
   crest.add(mono);
 

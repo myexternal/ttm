@@ -21,7 +21,7 @@ A Montessori classroom shelf: real wooden toys, bright tints, everything at chil
 | tints | pink / sky / sun / green / lilac | learning cards, review tags |
 
 ## Type
-**Bricolage Grotesque** (self-hosted variable, 200–800), used at its extremes: 200 for the voice, 800 for the emphasis, mixed inside each headline ("Little hands, **big beginnings.**"). Hero 54–168px at -0.055em. Section heads 38–84px. Body 17px. Sinhala name in Noto Sans Sinhala Light in the footer.
+**Bricolage Grotesque** (self-hosted variable, 200–800), used at its extremes: 200 for the voice, 800 for the emphasis, mixed inside each headline ("Little hands, **big beginnings.**"). Hero 54–168px at -0.055em. Section heads 38–84px. Body 17px. Sinhala: Noto Sans Sinhala (100–900), also used at its extremes. In Sinhala mode headings shrink about 20%, line height opens up (1.18–1.5) and letter spacing goes back to 0, because tight tracking breaks Sinhala joins.
 
 ## Hierarchy and layout (each section a different layout)
 1. **Hero:** floating pill nav, centred giant headline with 3 rotated stickers, two CTAs ("Claim a seat for your child" is primary), then the school film in a big rounded frame with a review card and "Open weekdays" chip. 3D tower and stacker float either side with parallax; blocks sit on the frame's corner.

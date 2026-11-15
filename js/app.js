@@ -4,11 +4,35 @@
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* ---------- language: English in the HTML, Sinhala from js/i18n-si.js ---------- */
+  const SI = window.TTM_SI || {};
+  const EN_UI = {
+    pause: "Pause background video",
+    play: "Play background video",
+    formError: "Please add your name and a phone number we can call back.",
+    waOk: "Lovely! WhatsApp is opening with your message. Press send there and we’ll call you back.",
+    mailOk: "Lovely! Your email app is opening with the message.",
+    claimed: "Seat requested ✓",
+    waDirect: "Hello Tiny Tot, I'd like to ask about admissions.",
+    mailSubject: "Claiming a seat at Tiny Tot",
+    msg: (g) => [
+      "Hello Tiny Tot Montessori,",
+      "",
+      `I'm ${g.parent} and I'd like to claim a seat${g.child ? ` for ${g.child}` : " for my child"}${g.age ? ` (${g.age})` : ""}.`,
+      "Could we arrange a visit?",
+      `My phone: ${g.phone}`,
+      g.message ? `\n${g.message}` : ""
+    ]
+  };
+  let lang = "en";
+  const ui = k => (lang === "si" && SI._ui && SI._ui[k]) || EN_UI[k];
+
   /* ---------- links from config ---------- */
   $$("[data-reviews]").forEach(a => (a.href = C.reviews || C.maps));
   $$("[data-directions]").forEach(a => (a.href = C.maps));
   $$("[data-facebook]").forEach(a => (a.href = C.facebook));
-  $$("[data-wa-direct]").forEach(a => (a.href = `https://wa.me/${C.whatsapp}?text=${encodeURIComponent("Hello Tiny Tot, I'd like to ask about admissions.")}`));
+  const setWaDirect = () => $$("[data-wa-direct]").forEach(a => (a.href = `https://wa.me/${C.whatsapp}?text=${encodeURIComponent(ui("waDirect"))}`));
+  setWaDirect();
 
   /* ---------- nav hides on scroll down, dock appears after the hero ---------- */
   const nav = $("[data-nav]");
@@ -71,7 +95,7 @@
   requestAnimationFrame(() => requestAnimationFrame(() => hero.classList.add("is-in")));
   const hv = $("[data-hero-video]");
   const hp = $("[data-hero-pause]");
-  const setPaused = p => { hp.classList.toggle("is-paused", p); hp.setAttribute("aria-label", p ? "Play background video" : "Pause background video"); };
+  const setPaused = p => { hp.classList.toggle("is-paused", p); hp.setAttribute("aria-label", ui(p ? "play" : "pause")); };
   if (reduce) { hv.removeAttribute("autoplay"); hv.pause(); setPaused(true); }
   hp.addEventListener("click", () => {
     if (hv.paused) { hv.play().catch(() => {}); setPaused(false); }
@@ -187,14 +211,8 @@
   const compose = () => {
     const d = new FormData(form);
     const g = k => (d.get(k) || "").toString().trim();
-    const lines = [
-      "Hello Tiny Tot Montessori,",
-      "",
-      `I'm ${g("parent")} and I'd like to claim a seat${g("child") ? ` for ${g("child")}` : " for my child"}${g("age") ? ` (${g("age")})` : ""}.`,
-      "Could we arrange a visit?",
-      `My phone: ${g("phone")}`,
-      g("message") ? `\n${g("message")}` : ""
-    ].filter(l => l !== "");
+    const v = { parent: g("parent"), phone: g("phone"), child: g("child"), age: g("age"), message: g("message") };
+    const lines = ui("msg")(v).filter((l, i) => l !== "" || i === 1); // keep the blank line after the greeting
     return lines.join("\n");
   };
   const validate = () => {
@@ -206,14 +224,14 @@
       if (bad && ok) { el.focus(); ok = false; }
     });
     status.className = "form-status";
-    if (!ok) { status.textContent = "Please add your name and a phone number we can call back."; status.classList.add("is-error"); }
+    if (!ok) { status.textContent = ui("formError"); status.dataset.k = "formError"; status.classList.add("is-error"); }
     return ok;
   };
   const celebrate = () => {
     form.classList.remove("is-claimed");
     void form.offsetWidth; // restart the stamp if they claim twice
     form.classList.add("is-claimed");
-    $(".claim-txt", claimBtn).textContent = "Seat requested ✓";
+    $(".claim-txt", claimBtn).textContent = ui("claimed");
     const r = claimBtn.getBoundingClientRect();
     burst(r.left + r.width / 2, r.top + r.height / 2);
   };
@@ -226,16 +244,65 @@
     // open the tab inside the click so pop-up blockers allow it, then let the stamp land on this page
     const w = window.open(url, "_blank");
     if (w) w.opener = null; else setTimeout(() => (location.href = url), reduce ? 0 : 900);
-    status.textContent = "Lovely! WhatsApp is opening with your message. Press send there and we’ll call you back.";
+    status.textContent = ui("waOk"); status.dataset.k = "waOk";
     status.classList.add("is-ok");
   });
   $("[data-mail]").addEventListener("click", e => {
     e.preventDefault();
     if (!validate()) return;
     celebrate();
-    const url = `mailto:${C.email}?subject=${encodeURIComponent("Claiming a seat at Tiny Tot")}&body=${encodeURIComponent(compose())}`;
+    const url = `mailto:${C.email}?subject=${encodeURIComponent(ui("mailSubject"))}&body=${encodeURIComponent(compose())}`;
     setTimeout(() => (location.href = url), reduce ? 0 : 900);
-    status.textContent = "Lovely! Your email app is opening with the message.";
+    status.textContent = ui("mailOk"); status.dataset.k = "mailOk";
     status.className = "form-status is-ok";
   });
+
+  /* ---------- language switch (keeps the reader at the same spot on the page) ---------- */
+  const tEls = $$("[data-i18n]");
+  const aEls = $$("[data-i18n-attr]");
+  const EN = new Map(tEls.map(el => [el, el.innerHTML]));
+  const ENA = new Map(aEls.map(el => [el, el.getAttribute("data-i18n-attr").split(",").map(p => { const [a, k] = p.split(":"); return [a, k, el.getAttribute(a)]; })]));
+  const enTitle = document.title;
+  const anchor = () => {
+    // the element under the upper part of the screen; if it sits inside text we swap, use that text block
+    const skip = el => !el || el.closest("[data-nav],[data-dock],[data-sheet]");
+    for (const f of [0.35, 0.5, 0.25, 0.65]) {
+      const el = document.elementFromPoint(innerWidth / 2, innerHeight * f);
+      if (skip(el)) continue;
+      return el.closest("[data-i18n]") || el;
+    }
+    return null;
+  };
+  const apply = (to) => {
+    tEls.forEach(el => { const k = el.dataset.i18n; el.innerHTML = to === "si" && SI[k] != null ? SI[k] : EN.get(el); });
+    ENA.forEach((list, el) => list.forEach(([a, k, en]) => { const v = to === "si" && SI[k] != null ? SI[k] : en; v == null ? el.removeAttribute(a) : el.setAttribute(a, v); }));
+    document.documentElement.lang = to;
+    document.title = to === "si" && SI._title ? SI._title : enTitle;
+    $$("[data-set-lang]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.setLang === to)));
+    lang = to;
+    setWaDirect();
+    setPaused(hp.classList.contains("is-paused"));
+    if (form.classList.contains("is-claimed")) $(".claim-txt", claimBtn).textContent = ui("claimed");
+    if (status.dataset.k) status.textContent = ui(status.dataset.k);
+  };
+  const fontsReady = (to) => to !== "si" || !document.fonts ? Promise.resolve() :
+    Promise.race([Promise.all(["200", "400", "700", "800"].map(w => document.fonts.load(`${w} 20px Sinhala`, "අආ"))), new Promise(r => setTimeout(r, 1500))]);
+  const setLang = async (to, keepSpot = true) => {
+    if (to === lang && keepSpot) return;
+    await fontsReady(to).catch(() => {});
+    const a = keepSpot ? anchor() : null;
+    const before = a ? a.getBoundingClientRect().top : 0;
+    apply(to);
+    if (a && a.isConnected) {
+      const d = a.getBoundingClientRect().top - before;
+      if (Math.abs(d) > 0.5) scrollTo({ top: scrollY + d, behavior: "instant" });
+    }
+    try { localStorage.setItem("ttm-lang", to); } catch (_) {}
+    try { const u = new URL(location.href); to === "si" ? u.searchParams.set("lang", "si") : u.searchParams.delete("lang"); history.replaceState(history.state, "", u); } catch (_) {}
+    syncArrows();
+  };
+  $$("[data-set-lang]").forEach(b => b.addEventListener("click", () => setLang(b.dataset.setLang)));
+  let start = "en";
+  try { start = new URLSearchParams(location.search).get("lang") || localStorage.getItem("ttm-lang") || "en"; } catch (_) {}
+  if (start === "si") setLang("si", false).finally(() => document.documentElement.classList.remove("si-wait"));
 })();

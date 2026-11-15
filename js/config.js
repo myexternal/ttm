@@ -3,8 +3,8 @@
 window.TTM = {
   name: "Tiny Tot Montessori",
   // WhatsApp number used by the enrol form (international format, digits only).
-  // Google lists +94 71 151 3550; Facebook lists 076 567 2424. Confirm which one has WhatsApp.
-  whatsapp: "94711513550",
+  // The school confirmed WhatsApp is on 076 567 2424 (2026-11-15).
+  whatsapp: "94765672424",
   phones: [
     { label: "071 151 3550", tel: "+94711513550" },
     { label: "076 567 2424", tel: "+94765672424" }

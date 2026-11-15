@@ -1,6 +1,12 @@
-# Tiny Tot Montessori · notes for handover (v2)
+# Tiny Tot Montessori · notes for handover (v2.1)
 
 Static site: open `index.html` through any web server (not file://, because the 3D crest loads modules). Works on Render static hosting like the other clients. Edit phone, WhatsApp, email and links in `js/config.js`.
+
+## What changed in v2.1 (2026-11-15)
+- **Sinhala version.** An EN / සිං switch in the nav and the menu. English is the default. Switching keeps the reader at the same spot on the page, remembers the choice for next time, and adds `?lang=si` to the address so a Sinhala link can be shared. All text, buttons, form labels, image descriptions and the WhatsApp/email message switch language. Sinhala text lives in `js/i18n-si.js`; English stays in `index.html`. Font: Noto Sans Sinhala (self-hosted, `fonts/noto-sinhala.woff2`, SIL Open Font License).
+- **The Sinhala is my draft translation.** A native speaker at the school should read `js/i18n-si.js` once before launch. The two Google reviews are translated and marked "(පරිවර්තනය)".
+- **3D crest:** the top bar is now two separate T tops with a gap in the middle, matching the real logo (T T M).
+- **WhatsApp:** the form and the WhatsApp button now send to +94 76 567 2424 (`whatsapp` in `js/config.js`). The call buttons still show 071 151 3550 and 076 567 2424.
 
 ## What changed in v2
 - New design system "Toybox" (see DESIGN.md), inspired by the two Framer sites the client shared.
@@ -23,7 +29,6 @@ Static site: open `index.html` through any web server (not file://, because the 
 ## Must confirm with the school
 - That dropping "daycare" is right for them (the wall still says it, so parents may ask).
 - Weekday hours other than Friday (shown in the hero chip, stats, and visit card).
-- Which number has WhatsApp. The form sends to 071 151 3550 (`whatsapp` in `js/config.js`).
 - "Sinhala and English from day one": inferred from the Sinhala letter mural and English alphabet wall in the photos.
 - The lamp-night photo is captioned "Lamp night"; give the real occasion if they want it named.
 - Age range: the form asks for the child's age as free text; no ages are claimed on the site. Fees and staff names are not on the site at all. Nothing was invented.
@@ -40,7 +45,8 @@ Static site: open `index.html` through any web server (not file://, because the 
 
 ## Not done yet
 - Domain unknown: once known, change `og:image` in `index.html` to the absolute URL (e.g. `https://<domain>/media/share.jpg`).
-- Sinhala language version (needs a native speaker).
 
 ## Testing done
+v2.1: both languages click-tested at 390, 820, 1024, 1440 and 1920 px (same checks as below), plus switching languages mid-page at five sections keeps the same content in view, reloading keeps Sinhala, and the WhatsApp message is built in the chosen language.
+
 Playwright click-test at 390, 820, 1024, 1440 and 1920 px: no horizontal overflow, no invisible click blockers (only elements mid-reveal at the bottom edge), menu sheet and nav links scroll to sections, hero pause, film opens and closes from the hero and the film band, card arrows, review stamp arrows, crest drag, map loads, form validates, stamp lands and the WhatsApp message is built, no "daycare" anywhere in the page, mobile dock appears. No console errors.
