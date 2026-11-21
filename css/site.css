@@ -506,15 +506,14 @@ b,strong{font-weight:800}
 
 /* ---------- language switch ---------- */
 .lang{display:flex;flex:none;padding:3px;border-radius:999px;background:rgba(36,25,94,.07)}
-.lang button{min-width:44px;min-height:40px;padding:0 12px;border-radius:999px;font-size:14px;font-weight:700;color:var(--ink-2);transition:background-color 200ms ease,color 200ms ease,transform 160ms var(--ease-out)}
-.lang button[lang="si"]{font-family:"Sinhala","Bricolage",sans-serif}
-.lang button[aria-pressed="true"]{background:var(--ink);color:#fff;box-shadow:0 4px 10px -4px rgba(36,25,94,.5)}
-.lang button:active{transform:scale(.94)}
-@media (hover:hover) and (pointer:fine){.lang button[aria-pressed="false"]:hover{background:#fff;color:var(--ink)}}
-.sheet-top .lang button{min-height:44px}
-@media (max-width:560px){.nav-pill>.lang button{min-width:40px;min-height:38px;padding:0 9px;font-size:13px}}
+.lang a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:40px;padding:0 12px;border-radius:999px;font-size:14px;font-weight:700;color:var(--ink-2);text-decoration:none;-webkit-tap-highlight-color:transparent;transition:background-color 200ms ease,color 200ms ease,transform 160ms var(--ease-out)}
+.lang a[lang="si"]{font-family:"Sinhala","Bricolage",sans-serif}
+.lang a[aria-current="true"]{background:var(--ink);color:#fff;box-shadow:0 4px 10px -4px rgba(36,25,94,.5)}
+.lang a:active{transform:scale(.94)}
+@media (hover:hover) and (pointer:fine){.lang a:not([aria-current="true"]):hover{background:#fff;color:var(--ink)}}
+.sheet-top .lang a{min-height:44px}
+@media (max-width:560px){.nav-pill>.lang a{min-width:40px;min-height:38px;padding:0 9px;font-size:13px}}
 @media (max-width:440px){.brand-word{display:none}}
-.si-wait body{opacity:0}
 
 /* ---------- Sinhala typography ----------
    Sinhala letters are taller and wider than Latin, and tight tracking breaks their joins,

@@ -110,7 +110,7 @@ function init() {
   branch(1); branch(-1);
 
   // lettering
-  new FontLoader().load("media/helvetiker_bold.typeface.json", (font) => {
+  new FontLoader().load(new URL("../media/helvetiker_bold.typeface.json", import.meta.url).href, (font) => {
     const tg = (str, size) => { const g = new TextGeometry(str, { font, size, depth: 0.05, curveSegments: 5, bevelEnabled: true, bevelThickness: 0.012, bevelSize: 0.006, bevelSegments: 2 }); g.computeBoundingBox(); return g; };
     // TINY TOT, straight, above the monogram
     const top = new THREE.Mesh(tg("TINY TOT", 0.2), C.magenta);

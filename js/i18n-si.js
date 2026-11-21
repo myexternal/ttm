@@ -2,7 +2,10 @@
 // Keys match data-i18n="key" (inner HTML) and data-i18n-attr="attr:key" in index.html.
 // Draft translation: please have a native speaker at the school read it once before launch.
 window.TTM_SI = {
-  _title: "ටයිනි ටොට් මොන්ටිසෝරි · ගොනාපිනූවල",
+  _title: "ටයිනි ටොට් මොන්ටිසෝරි · ගොනාපිනූවල පෙරපාසල, ගාල්ල",
+  _desc: "ගොනාපිනූවල, බද්දේගම පාරේ පිහිටි මොන්ටිසෝරි පෙරපාසල. 2002 සිට පුංචි දරුවන් අත්දැකීමෙන් ඉගෙන ගනී. Google හි ශ්‍රේණිගත කිරීම 4.8. ඉංග්‍රීසියෙන්ද කියවිය හැක.",
+  _ogTitle: "ටයිනි ටොට් මොන්ටිසෝරි · ගොනාපිනූවල",
+  _ogDesc: "ගොනාපිනූවල මොන්ටිසෝරි පෙරපාසල, 2002 සිට. ඔබේ දරුවාට ඉඩක් වෙන්කරගන්න.",
   skip: "අන්තර්ගතයට යන්න",
   brandTop: "ටයිනි ටොට් මොන්ටිසෝරි, ඉහළට",
   navAbout: "අප ගැන",
@@ -36,7 +39,7 @@ window.TTM_SI = {
   stat4: "පළමු දින සිටම භාෂා දෙකක්: සිංහල සහ ඉංග්‍රීසි",
 
   aboutLabel: "ටයිනි ටොට් ගැන",
-  statement: "<span class=\"lt\">ටයිනි ටොට් හි</span> <span class=\"pic\"><img src=\"media/v-friends-640.webp\" alt=\"\"></span> <b>දරුවෝ තම වැඩ තමන්ම තෝරති,</b> <span class=\"lt\">අතින්ම ඉගෙන ගනිති</span> <span class=\"pic pic-wide\"><img src=\"media/v-pencils-640.webp\" alt=\"\"></span> <span class=\"lt\">තම වේගයට වැඩෙති,</span> <b>නමින්ම හඳුනන</b> <span class=\"pic\"><img src=\"media/v-teach-640.webp\" alt=\"\"></span> <b>ගුරුවරුන් සමඟ.</b>",
+  statement: "<span class=\"lt\">ටයිනි ටොට් හි</span> <span class=\"pic\"><img src=\"/media/v-friends-640.webp\" alt=\"\"></span> <b>දරුවෝ තම වැඩ තමන්ම තෝරති,</b> <span class=\"lt\">අතින්ම ඉගෙන ගනිති</span> <span class=\"pic pic-wide\"><img src=\"/media/v-pencils-640.webp\" alt=\"\"></span> <span class=\"lt\">තම වේගයට වැඩෙති,</span> <b>නමින්ම හඳුනන</b> <span class=\"pic\"><img src=\"/media/v-teach-640.webp\" alt=\"\"></span> <b>ගුරුවරුන් සමඟ.</b>",
   altClass: "දීප්තිමත් පන්ති කාමරයක රතු සහ නිල් පුංචි මේස අසල වැඩ කරන දරුවන්",
   aboutH2: "<span class=\"lt\">දෙවන නිවසක් වැනි</span> <b>පළමු පාසලක්</b>",
   aboutP: "සෙවණ දෙන ලොකු ගස්, ඔංචිල්ලා සහ උමං පිරුණු මිදුලක්, සෑම පාටකින්ම සරසපු පන්ති කාමර. දරුවෝ මොන්ටිසෝරි ක්‍රමයට ඉගෙන ගනිති: සැබෑ උපකරණ, පුංචි මේස, සහ හරියට කරන තුරු නැවත නැවත උත්සාහ කිරීමේ නිදහස.",

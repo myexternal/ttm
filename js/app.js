@@ -4,8 +4,11 @@
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---------- language: English in the HTML, Sinhala from js/i18n-si.js ---------- */
+  /* ---------- language: "/" is English, "/si/" is Sinhala (both are real pages for search engines).
+     Switching swaps the text in place with js/i18n-si.js or js/i18n-en.js, so the reader keeps their spot. ---------- */
   const SI = window.TTM_SI || {};
+  const pageLang = document.documentElement.lang === "si" ? "si" : "en";
+  const DICT = { si: SI, en: window.TTM_EN || null };
   const EN_UI = {
     pause: "Pause background video",
     play: "Play background video",
@@ -24,7 +27,7 @@
       g.message ? `\n${g.message}` : ""
     ]
   };
-  let lang = "en";
+  let lang = pageLang;
   const ui = k => (lang === "si" && SI._ui && SI._ui[k]) || EN_UI[k];
 
   /* ---------- links from config ---------- */
@@ -260,9 +263,10 @@
   /* ---------- language switch (keeps the reader at the same spot on the page) ---------- */
   const tEls = $$("[data-i18n]");
   const aEls = $$("[data-i18n-attr]");
-  const EN = new Map(tEls.map(el => [el, el.innerHTML]));
-  const ENA = new Map(aEls.map(el => [el, el.getAttribute("data-i18n-attr").split(",").map(p => { const [a, k] = p.split(":"); return [a, k, el.getAttribute(a)]; })]));
-  const enTitle = document.title;
+  const ORIG = new Map(tEls.map(el => [el, el.innerHTML]));
+  const ORIGA = new Map(aEls.map(el => [el, el.getAttribute("data-i18n-attr").split(",").map(p => { const [a, k] = p.split(":"); return [a, k, el.getAttribute(a)]; })]));
+  const origTitle = document.title;
+  const PATH = { en: "/", si: "/si/" };
   const anchor = () => {
     // the element under the upper part of the screen; if it sits inside text we swap, use that text block
     const skip = el => !el || el.closest("[data-nav],[data-dock],[data-sheet]");
@@ -273,12 +277,13 @@
     }
     return null;
   };
+  const pick = (to, k, orig) => { if (to === pageLang) return orig; const v = DICT[to] && DICT[to][k]; return v != null ? v : orig; };
   const apply = (to) => {
-    tEls.forEach(el => { const k = el.dataset.i18n; el.innerHTML = to === "si" && SI[k] != null ? SI[k] : EN.get(el); });
-    ENA.forEach((list, el) => list.forEach(([a, k, en]) => { const v = to === "si" && SI[k] != null ? SI[k] : en; v == null ? el.removeAttribute(a) : el.setAttribute(a, v); }));
+    tEls.forEach(el => { el.innerHTML = pick(to, el.dataset.i18n, ORIG.get(el)); });
+    ORIGA.forEach((list, el) => list.forEach(([a, k, o]) => { const v = pick(to, k, o); v == null ? el.removeAttribute(a) : el.setAttribute(a, v); }));
     document.documentElement.lang = to;
-    document.title = to === "si" && SI._title ? SI._title : enTitle;
-    $$("[data-set-lang]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.setLang === to)));
+    document.title = pick(to, "_title", origTitle);
+    $$("[data-set-lang]").forEach(b => b.dataset.setLang === to ? b.setAttribute("aria-current", "true") : b.removeAttribute("aria-current"));
     lang = to;
     setWaDirect();
     setPaused(hp.classList.contains("is-paused"));
@@ -287,10 +292,10 @@
   };
   const fontsReady = (to) => to !== "si" || !document.fonts ? Promise.resolve() :
     Promise.race([Promise.all(["200", "400", "700", "800"].map(w => document.fonts.load(`${w} 20px Sinhala`, "අආ"))), new Promise(r => setTimeout(r, 1500))]);
-  const setLang = async (to, keepSpot = true) => {
-    if (to === lang && keepSpot) return;
+  const setLang = async (to) => {
+    if (to === lang) return;
     await fontsReady(to).catch(() => {});
-    const a = keepSpot ? anchor() : null;
+    const a = anchor();
     const before = a ? a.getBoundingClientRect().top : 0;
     apply(to);
     if (a && a.isConnected) {
@@ -298,11 +303,16 @@
       if (Math.abs(d) > 0.5) scrollTo({ top: scrollY + d, behavior: "instant" });
     }
     try { localStorage.setItem("ttm-lang", to); } catch (_) {}
-    try { const u = new URL(location.href); to === "si" ? u.searchParams.set("lang", "si") : u.searchParams.delete("lang"); history.replaceState(history.state, "", u); } catch (_) {}
+    try { const u = new URL(location.href); u.pathname = PATH[to]; u.searchParams.delete("lang"); history.replaceState(history.state, "", u); } catch (_) {}
     syncArrows();
   };
-  $$("[data-set-lang]").forEach(b => b.addEventListener("click", () => setLang(b.dataset.setLang)));
-  let start = "en";
-  try { start = new URLSearchParams(location.search).get("lang") || localStorage.getItem("ttm-lang") || "en"; } catch (_) {}
-  if (start === "si") setLang("si", false).finally(() => document.documentElement.classList.remove("si-wait"));
+  // The toggles are real links (/ and /si/). With JS we switch in place instead, unless the reader
+  // opens the link in a new tab or the other language's text failed to load.
+  $$("[data-set-lang]").forEach(b => b.addEventListener("click", e => {
+    const to = b.dataset.setLang;
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+    if (to !== pageLang && !DICT[to]) return;
+    e.preventDefault();
+    setLang(to);
+  }));
 })();

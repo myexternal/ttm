@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://tinytot.lk/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tinytot.lk/"/>
+    <xhtml:link rel="alternate" hreflang="si" href="https://tinytot.lk/si/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tinytot.lk/"/>
+  </url>
+  <url>
+    <loc>https://tinytot.lk/si/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tinytot.lk/"/>
+    <xhtml:link rel="alternate" hreflang="si" href="https://tinytot.lk/si/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tinytot.lk/"/>
+  </url>
+</urlset>
